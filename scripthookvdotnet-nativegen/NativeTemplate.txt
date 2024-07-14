@@ -1,12 +1,9 @@
-// This file was generated with https://github.com/scripthookvdotnet/scripthookvdotnet-nativegen
+// This file was generated with https://github.com/DekoKiyo/scripthookvdotnet-nativegen
+// The original project is https://github.com/scripthookvdotnet/scripthookvdotnet-nativegen
 
-namespace GTA
+namespace BaseLib;
+
+public enum Hash : ulong
 {{
-	namespace Native
-	{{
-		public enum Hash : ulong
-		{{
 {0}
-		}}
-	}}
 }}

@@ -76,9 +76,9 @@ namespace NativeGen
 					LogToConsoleIfVerbose($"Processing {nativeNamespaceKey}", options.Verbose);
 					NativeNamespace nativeNamespace = nativeFile[nativeNamespaceKey];
 
-					resultBuilder.AppendLine("\t\t\t/*");
-					resultBuilder.AppendLine("\t\t\t\t" + nativeNamespaceKey);
-					resultBuilder.AppendLine("\t\t\t*/");
+					resultBuilder.AppendLine("\t/*");
+					resultBuilder.AppendLine("\t\t" + nativeNamespaceKey);
+					resultBuilder.AppendLine("\t*/");
 
 					foreach (string nativeFuncKey in nativeNamespace.Keys)
 					{
@@ -97,11 +97,11 @@ namespace NativeGen
 						if (options.AppendJoaatHash)
 						{
 							string substringForJoaatHashComment = !string.IsNullOrEmpty(nativeFunction.JHash) ? $" // {nativeFunction.JHash}" : string.Empty;
-							resultBuilder.AppendLine($"\t\t\t{nativeFunctionName} = {nativeFuncKey},{substringForJoaatHashComment}");
+							resultBuilder.AppendLine($"\t{nativeFunctionName} = {nativeFuncKey},{substringForJoaatHashComment}");
 						}
 						else
 						{
-							resultBuilder.AppendLine($"\t\t\t{nativeFunctionName} = {nativeFuncKey},");
+							resultBuilder.AppendLine($"\t{nativeFunctionName} = {nativeFuncKey},");
 						}
 					}
 				}
